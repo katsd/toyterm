@@ -8,9 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    let toyTerm = ToyTerm(text: "") { input in
+        print(input)
+    }
+
     var body: some View {
-        ToyTermView(toyTerm: ToyTerm(text: "")) { input in
-            print(input)
+        NavigationView {
+            ToyTermView(toyTerm: toyTerm)
+                .onAppear {
+                    toyTerm.prompt()
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem {
+                        HStack {
+                            Button(">") {
+                                toyTerm.prompt()
+                            }
+                            Button("O") {
+                                toyTerm.output("Yay\n")
+                            }
+                        }
+                    }
+                }
         }
     }
 }

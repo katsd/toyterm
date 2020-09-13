@@ -21,7 +21,7 @@ public class ToyTerm: ObservableObject {
 
     static let enterText = "\n"
 
-    public init(text: String, onInput: @escaping (String) -> ()) {
+    public init(text: String, _ onInput: @escaping (String) -> ()) {
         self.text = text
         self.onInput = onInput
     }
@@ -41,4 +41,20 @@ public class ToyTerm: ObservableObject {
         onInput(String(text.suffix(text.count - inputStartPosition)))
     }
 
+    func addText(_ text: String) -> Bool {
+        if !canWrite {
+            return false
+        }
+
+        if text == ToyTerm.enterText {
+            canWrite = false
+            return true
+        }
+
+        if text == "\u{8}" {
+            
+        }
+
+        return true
+    }
 }

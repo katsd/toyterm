@@ -11,8 +11,6 @@ public struct ToyTermView: View {
 
     @StateObject public var toyTerm: ToyTerm
 
-    public let onInput: (String) -> ()
-
     public var body: some View {
         TextViewRepresentable(toyTerm: toyTerm)
     }
