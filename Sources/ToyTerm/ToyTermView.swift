@@ -8,7 +8,6 @@
 import SwiftUI
 
 public struct ToyTermView: View {
-
     @StateObject public var toyTerm: ToyTerm
 
     public var body: some View {
@@ -23,6 +22,7 @@ struct TextViewRepresentable: UIViewRepresentable {
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView(frame: .zero)
         textView.text = toyTerm.text
+        textView.font = .monospacedSystemFont(ofSize: 15, weight: .medium)
         textView.delegate = context.coordinator
         return textView
     }
