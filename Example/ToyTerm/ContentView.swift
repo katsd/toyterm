@@ -26,7 +26,7 @@ struct ContentView: View {
                             Button(">") {
                                 toyTerm.prompt()
                             }
-                            Button("O") {
+                            Button("OUT") {
                                 toyTerm.output("Yay\n")
                             }
                         }

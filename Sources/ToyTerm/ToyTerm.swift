@@ -41,18 +41,25 @@ public class ToyTerm: ObservableObject {
         onInput(String(text.suffix(text.count - inputStartPosition)))
     }
 
-    func addText(_ text: String) -> Bool {
+    func addText(text enteredText: String, range: NSRange) -> Bool {
         if !canWrite {
             return false
         }
 
-        if text == ToyTerm.enterText {
+        if range.location < inputStartPosition {
+            return false
+        }
+
+        if enteredText == ToyTerm.enterText {
             canWrite = false
             return true
         }
 
-        if text == "\u{8}" {
-            
+        if enteredText.isEmpty {
+            print(inputStartPosition, self.text.count)
+            if inputStartPosition == self.text.count {
+                return false
+            }
         }
 
         return true

@@ -46,11 +46,7 @@ extension TextViewRepresentable {
         }
 
         func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-            if !toyTerm.canWrite {
-                return false
-            }
-
-            return true
+            toyTerm.addText(text: text, range: range)
         }
 
         func textViewDidChange(_ textView: UITextView) {
