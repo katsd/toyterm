@@ -13,7 +13,7 @@
 		0E7B98C3250140FD0051DA96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E7B98C2250140FD0051DA96 /* Preview Assets.xcassets */; };
 		0E7B98CD2501414E0051DA96 /* ToyTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7B98CC2501414E0051DA96 /* ToyTerm.swift */; };
 		611ACC380F151E74AD21F621 /* ToyTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ACAF199AFE44053055BF1 /* ToyTermView.swift */; };
-		611ACF63A0302113A73CE5A5 /* ToyTermReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ACF7FB4F50BF0EC7C7F74 /* ToyTermReceiver.swift */; };
+		611ACF63A0302113A73CE5A5 /* ToyTermDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611ACF7FB4F50BF0EC7C7F74 /* ToyTermDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		0E7B98C4250140FD0051DA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7B98CC2501414E0051DA96 /* ToyTerm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyTerm.swift; sourceTree = "<group>"; };
 		611ACAF199AFE44053055BF1 /* ToyTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyTermView.swift; sourceTree = "<group>"; };
-		611ACF7FB4F50BF0EC7C7F74 /* ToyTermReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyTermReceiver.swift; sourceTree = "<group>"; };
+		611ACF7FB4F50BF0EC7C7F74 /* ToyTermDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyTermDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			children = (
 				0E7B98CC2501414E0051DA96 /* ToyTerm.swift */,
 				611ACAF199AFE44053055BF1 /* ToyTermView.swift */,
-				611ACF7FB4F50BF0EC7C7F74 /* ToyTermReceiver.swift */,
+				611ACF7FB4F50BF0EC7C7F74 /* ToyTermDelegate.swift */,
 			);
 			path = ToyTerm;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 				0E7B98CD2501414E0051DA96 /* ToyTerm.swift in Sources */,
 				0E7B98BC250140F40051DA96 /* ToyTermApp.swift in Sources */,
 				611ACC380F151E74AD21F621 /* ToyTermView.swift in Sources */,
-				611ACF63A0302113A73CE5A5 /* ToyTermReceiver.swift in Sources */,
+				611ACF63A0302113A73CE5A5 /* ToyTermDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

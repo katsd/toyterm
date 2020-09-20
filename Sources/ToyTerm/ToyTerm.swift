@@ -11,19 +11,20 @@ public class ToyTerm: ObservableObject {
 
     @Published public var text: String
 
-    let onInput: (String) -> ()
+    public var delegate: ToyTermDelegate?
 
     private(set) var canWrite = false
 
     private var inputStartPosition = 0
 
+    private var needInput = false
+
     private static let promptText = "\n> "
 
     static let enterText = "\n"
 
-    public init(text: String, _ onInput: @escaping (String) -> ()) {
+    public init(text: String) {
         self.text = text
-        self.onInput = onInput
     }
 
     public func output(_ text: String) {
@@ -38,7 +39,11 @@ public class ToyTerm: ObservableObject {
     }
 
     func input() {
-        onInput(String(text.suffix(text.count - inputStartPosition)))
+        if !needInput {
+            return
+        }
+        delegate?.input(String(text.suffix(text.count - inputStartPosition).dropLast(1)))
+        needInput = false
     }
 
     func addText(text enteredText: String, range: NSRange) -> Bool {
@@ -51,12 +56,12 @@ public class ToyTerm: ObservableObject {
         }
 
         if enteredText == ToyTerm.enterText {
+            needInput = true
             canWrite = false
             return true
         }
 
         if enteredText.isEmpty {
-            print(inputStartPosition, self.text.count)
             if inputStartPosition == self.text.count {
                 return false
             }

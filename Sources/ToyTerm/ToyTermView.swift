@@ -51,6 +51,7 @@ extension TextViewRepresentable {
 
         func textViewDidChange(_ textView: UITextView) {
             toyTerm.text = textView.text
+            toyTerm.input()
         }
     }
 }

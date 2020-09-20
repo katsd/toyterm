@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-
-    let toyTerm = ToyTerm(text: "") { input in
-        print(input)
-    }
+    let toyTerm = ToyTerm(text: "")
 
     var body: some View {
         NavigationView {
             ToyTermView(toyTerm: toyTerm)
                 .onAppear {
+                    toyTerm.delegate = self
                     toyTerm.prompt()
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -33,6 +31,15 @@ struct ContentView: View {
                     }
                 }
         }
+    }
+}
+
+extension ContentView: ToyTermDelegate {
+    func input(_ text: String) {
+        for _ in 0..<3 {
+            toyTerm.output("\(text)\n")
+        }
+        toyTerm.prompt()
     }
 }
 
