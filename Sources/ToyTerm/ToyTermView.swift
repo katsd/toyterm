@@ -23,6 +23,8 @@ struct TextViewRepresentable: UIViewRepresentable {
         let textView = UITextView(frame: .zero)
         textView.text = toyTerm.text
         textView.font = .monospacedSystemFont(ofSize: 15, weight: .medium)
+        textView.smartInsertDeleteType = .no
+        textView.smartQuotesType = .no
         textView.delegate = context.coordinator
         return textView
     }

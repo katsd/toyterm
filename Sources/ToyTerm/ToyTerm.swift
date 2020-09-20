@@ -51,10 +51,6 @@ public class ToyTerm: ObservableObject {
             return false
         }
 
-        if range.location < inputStartPosition {
-            return false
-        }
-
         if enteredText == ToyTerm.enterText {
             needInput = true
             canWrite = false
@@ -62,7 +58,7 @@ public class ToyTerm: ObservableObject {
         }
 
         if enteredText.isEmpty {
-            if inputStartPosition == self.text.count {
+            if range.location < inputStartPosition {
                 return false
             }
         }
