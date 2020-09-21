@@ -8,7 +8,11 @@
 import SwiftUI
 
 public struct ToyTermView: View {
-    @StateObject public var toyTerm: ToyTerm
+    @ObservedObject var toyTerm: ToyTerm
+
+    public init(_ toyTerm: ToyTerm) {
+        self.toyTerm = toyTerm
+    }
 
     public var body: some View {
         TextViewRepresentable(toyTerm: toyTerm)
@@ -17,7 +21,7 @@ public struct ToyTermView: View {
 }
 
 struct TextViewRepresentable: UIViewRepresentable {
-    @StateObject var toyTerm: ToyTerm
+    @ObservedObject var toyTerm: ToyTerm
 
     func makeUIView(context: Context) -> UITextView {
         let textView = UITextView(frame: .zero)
